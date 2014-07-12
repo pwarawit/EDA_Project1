@@ -28,12 +28,10 @@ plot1 <- function(){
     data <- full_data[(as.Date(full_data$Date,format="%d/%m/%Y") <= end_date & as.Date(full_data$Date,format="%d/%m/%Y") >= begin_date),]
     
     # Convert $Date into date value and $\
-    #newdata<-cbind(as.Date(data$Date, format="%d/%m/%Y"),data)
     data$Date <- as.Date(data$Date, format="%d/%m/%Y")
-    #data
     
     # This is the plot
-    hist(as.numeric(data$Global_active_power)/1000, main="Global Active Power", col="Red", xlab="Global Active Power (kilowatts)")
-    #data <- data[,c()]
-    
+    png(filename = "plot1.png", width = 480, height = 480)
+    hist(as.numeric(data$Global_active_power)/500, main="Global Active Power", col="Red", xlab="Global Active Power (kilowatts)")
+    dev.off()
 }    
