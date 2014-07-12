@@ -30,8 +30,12 @@ plot3 <- function(){
     #data
     
     # This is the plot
-    #png(filename = "plot2.png", width = 480, height = 480)
-    plot(data$Date, data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)")
-    #dev.off()
+    png(filename = "plot3.png", width = 480, height = 480)
+    plot(data$Date, data$Sub_metering_1, type="n", ylab="Energy sub metering", xlab="")
+    lines(data$Date, data$Sub_metering_1, col="black")
+    lines(data$Date, data$Sub_metering_2, col="red")
+    lines(data$Date, data$Sub_metering_3, col="blue")
+    legend("topright", lty = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+    dev.off()
     
 }
