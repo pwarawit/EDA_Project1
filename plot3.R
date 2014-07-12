@@ -1,5 +1,5 @@
-plot2 <- function(){
-    # plot2.R 
+plot3 <- function(){
+    # plot3.R 
     # written by PanaEk Warawit as part of Exploratory Data Analysis 
     # class project on July 12, 2014
     
@@ -30,8 +30,8 @@ plot2 <- function(){
     #data
     
     # This is the plot
-    png(filename = "plot2.png", width = 480, height = 480)
-    plot(data$Date, data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
-    dev.off()
+    #png(filename = "plot2.png", width = 480, height = 480)
+    plot(data$Date, data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)")
+    #dev.off()
     
 }
